@@ -1,0 +1,27 @@
+// https://www.codechef.com/problems/CACHEHIT
+#include <iostream>
+#include <algorithm>
+#include <list>
+#include <queue>
+
+using namespace std;
+
+int main() {
+   int t;
+   cin >> t;
+   while(t) {
+      int n, b, m;
+      cin >> n >> b >> m;
+      int x[m], div, temp = -1, ans = 0;
+      for(int i = 0; i < m; ++i) {
+         cin >> x[i];
+         div = x[i] / b;
+         if(div != temp) {
+            temp = div;
+            ++ans;
+         }
+      }
+      cout << ans << endl;
+      --t;
+   }
+}
