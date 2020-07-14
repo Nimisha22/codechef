@@ -1,0 +1,24 @@
+// https://www.codechef.com/problems/DEVARRAY
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	    long long int n, q;
+	    cin >> n >> q;
+	    long long int a[n], min_a = INT_MAX, max_a = INT_MIN; 
+	    for(int i = 0; i < n; i++) {
+	        cin >> a[i];
+	        min_a = min(min_a, a[i]);
+	        max_a = max(max_a, a[i]);
+	    }
+	    for(int i = 0; i < q; i++) {
+	        long long int t;
+	        cin >> t;
+	        if((t <= max_a) && (t >= min_a))
+                cout << "Yes\n";
+            else
+                cout << "No\n";
+	    }
+	return 0;
+}
