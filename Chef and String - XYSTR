@@ -1,0 +1,49 @@
+// https://www.codechef.com/problems/XYSTR
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ull unsigned long long
+#define PII pair<int,int>
+#define PSI pair<string,int>
+#define PIII pair< int, pair<int,int> >
+
+#define error(args...) { string _s = #args; replace(_s.begin(), _s.end(), ',', ' '); stringstream _ss(_s); istream_iterator<string> _it(_ss); err(_it, args); }
+void err(istream_iterator<string> it) {cerr<<"\n";}
+template<typename T, typename... Args>
+void err(istream_iterator<string> it, T a, Args... args) {
+	cerr << *it << " = " << a << " | " ;
+	err(++it, args...);
+}
+
+void solve(){
+    string str;
+    cin>>str;
+
+    int ans = 0;
+    for(int i=0; i+1<str.size(); i++) {
+        if(str[i]=='x' && str[i+1]=='y') {
+            i++;
+            ans++;
+        }
+
+        else if(str[i]=='y' && str[i+1]=='x') {
+            i++;
+            ans++;
+       }
+    }
+    cout<< ans << "\n";
+}
+
+int main(){
+    //freopen("input.txt","r",stdin);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int test;
+    cin >> test;
+
+    while(test--)
+        solve();
+    return 0;
+}
